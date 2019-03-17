@@ -2,15 +2,11 @@ package ch.hearc.ig.odi.stringcalculatortdd;
 
 import ch.hearc.ig.odi.logger.LogClass;
 import org.apache.commons.lang3.StringUtils;
-import ch.hearc.ig.odi.logger.LogClass;
-
-
-
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import org.apache.logging.log4j.message.Message;
+import org.apache.logging.log4j.*;
 
 public class StringCalculator {
 
