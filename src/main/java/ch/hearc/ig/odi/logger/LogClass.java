@@ -7,7 +7,8 @@ public class LogClass {
   private static final Logger LOGGER = LogManager.getLogger(LogClass.class);
 
   public static void 	info(CharSequence message){
-   System.out.println("Logger information : " + message);
+   //issue #4
+    //System.out.println("Logger information : " + message);
   }
 
   public static void 	warn(CharSequence message){
