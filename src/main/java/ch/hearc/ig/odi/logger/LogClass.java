@@ -11,11 +11,11 @@ public class LogClass {
   }
 
   public static void 	warn(CharSequence message){
-    System.out.println("Logger warning : " + message);
+    System.out.println("\u001B[31m" + "Logger warning : " + message);
   }
 
   public static void 	fatal(CharSequence message){
-    System.out.println("Logger fatal : " + message);
+    System.out.println("\u001B[33m" + "Logger fatal : " + message);
   }
 
 }
