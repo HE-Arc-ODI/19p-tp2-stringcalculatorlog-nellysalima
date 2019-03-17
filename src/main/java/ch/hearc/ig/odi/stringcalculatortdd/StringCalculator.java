@@ -1,6 +1,8 @@
 package ch.hearc.ig.odi.stringcalculatortdd;
 
+import ch.hearc.ig.odi.logger.LogClass;
 import org.apache.commons.lang3.StringUtils;
+import ch.hearc.ig.odi.logger.LogClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,9 @@ public class StringCalculator {
 
         //if it begins by '//' then it's a personalize delimiter(s)
         if (numbers.startsWith("//")) {
+            // ajout logger info delimiter perso
+            LogClass.info("Delimiter personnalisé choisis");
+
             delimiter = this.extractDelimiter(numbers);
             //"cut" the beginning of the string so that the personalize delimiter is removed
             numbersUpdated = numbers.substring(numbers.indexOf("\n") + 1);
