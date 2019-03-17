@@ -10,4 +10,6 @@ public class LogClass {
 
   public static void 	warn(CharSequence message){}
 
+  public static void 	fatal(CharSequence message){}
+
 }
