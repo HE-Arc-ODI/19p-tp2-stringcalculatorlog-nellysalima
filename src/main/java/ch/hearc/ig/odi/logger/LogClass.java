@@ -8,4 +8,6 @@ public class LogClass {
 
   public static void 	info(CharSequence message){}
 
+  public static void 	warn(CharSequence message){}
+
 }

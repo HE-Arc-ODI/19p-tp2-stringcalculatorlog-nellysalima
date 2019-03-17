@@ -45,6 +45,8 @@ public class StringCalculator {
                     negativeNumbers.add(numberInt);
                 else if (numberInt <= 1000)
                     returnValue += numberInt;
+                else if (numberInt > 1000)
+                    LogClass.warn("Plus grand que 1000 ignoré");
             }
         }
 
