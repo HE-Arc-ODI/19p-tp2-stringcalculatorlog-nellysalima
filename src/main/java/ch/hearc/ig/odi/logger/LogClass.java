@@ -10,8 +10,12 @@ public class LogClass {
    System.out.println(message);
   }
 
-  public static void 	warn(CharSequence message){}
+  public static void 	warn(CharSequence message){
+    System.out.println(message);
+  }
 
-  public static void 	fatal(CharSequence message){}
+  public static void 	fatal(CharSequence message){
+    System.out.println(message);
+  }
 
 }
