@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration>
   <Appenders>
     <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %c{10} - %msg%n"/>
+      <LevelRangeFilter minLevel="Info" maxLevel="Info" onMatch="ACCEPT" onMismatch="DENY"/>
     </Console>
-
-    <appender name="FILE" class="org.apache.log4j.FileAppender">
-
-      <param name="file" value="${log}/log.out"/>
-      <param name="immediateFlush" value="true"/>
-      <param name="threshold" value="debug"/>
-      <param name="append" value="false"/>
-
-      <layout class="org.apache.log4j.PatternLayout">
-        <param name="conversionPattern" value="%m%n"/>
-      </layout>
-    </appender>
+    <File name="FileFatal" fileName="log/fatal.log">
+      <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %c{10} - %msg%n"/>
+      <LevelRangeFilter minLevel="Fatal" maxLevel="Fatal" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File>
+    <File name="FileWarning" fileName="log/warning.log">
+      <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %c{10} - %msg%n"/>
+      <LevelRangeFilter minLevel="Warn" maxLevel="Warn" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File>
   </Appenders>
   <Loggers>
-    <Root level="trace">
+    <Root level="ALL">
       <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileFatal"/>
+      <AppenderRef ref="FileWarning"/>
     </Root>
-
-    <logger name="log4j.rootLogger" additivity="false">
-      <level value="DEBUG"/>
-      <appender-ref ref="FILE"/>
-    </logger>
   </Loggers>
-  
-
 </Configuration>

@@ -1,14 +1,15 @@
 package ch.hearc.ig.odi.stringcalculatortdd;
 
-import ch.hearc.ig.odi.logger.LogClass;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-import org.apache.logging.log4j.*;
 
 public class StringCalculator {
+
+    private static final Logger LOGGER = LogManager.getLogger(StringCalculator.class);
 
     public StringCalculator() {
     }
@@ -21,7 +22,8 @@ public class StringCalculator {
         //if it begins by '//' then it's a personalize delimiter(s)
         if (numbers.startsWith("//")) {
             // ajout logger info delimiter perso
-            LogClass.info("Delimiter personnalisé choisis");
+            LOGGER.info("Delimiter personnalisé choisis");
+//            LogClass.info("Delimiter personnalisé choisis");
 
             delimiter = this.extractDelimiter(numbers);
             //"cut" the beginning of the string so that the personalize delimiter is removed
@@ -46,12 +48,14 @@ public class StringCalculator {
                 else if (numberInt <= 1000)
                     returnValue += numberInt;
                 else if (numberInt > 1000)
-                    LogClass.warn("Plus grand que 1000 ignoré");
+                    LOGGER.warn("Plus grand que 1000 ignoré");
+//                    LogClass.warn("Plus grand que 1000 ignoré");
             }
         }
 
         if (negativeNumbers.size() > 0) {
-            LogClass.fatal("Nombre négatif interdit");
+            LOGGER.fatal("Nombre négatif interdit");
+//            LogClass.fatal("Nombre négatif interdit");
             throw new RuntimeException("Negative not allowed: " + negativeNumbers.toString());
         }
 
